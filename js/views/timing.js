@@ -43,7 +43,7 @@ function vTiming() {
     `<tr><td>${l}</td><td class="n">${fmtH(a / 60)} h</td><td class="n">${fmtH(b / 60)} h</td></tr>`;
   const cur = tplTotals(kind);
   const tp = (cur.t / (cur.t + cur.p)) * 100;
-  return `<div class="sechd"><div><h2>Daily timing</h2><p>Your weekly rhythm. Weekdays: 30 minutes of algorithms in the morning, theory then building in the evening. Saturday is the long build. Sunday is review. Holiday weeks 6 and 7 drop to about 15 hours.</p></div>
+  return `<div class="sechd"><div><h2>Daily timing</h2><p>Your weekly rhythm. Weekdays: 30 minutes of algorithms in the morning, theory then building in the evening. Saturday is the long build. Sunday is review. Holiday weeks 5 and 6 (Christmas and New Year) drop to about 15 hours.</p></div>
     <div class="seg" role="group" aria-label="Week type"><button data-tpl="normal" aria-pressed="${kind === "normal"}">Normal week</button><button data-tpl="light" aria-pressed="${kind === "light"}">Light week</button></div></div>
    <div class="tpl">${days}</div>
    <div class="grid2" style="margin-top:16px">

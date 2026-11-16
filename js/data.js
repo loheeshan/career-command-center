@@ -102,63 +102,63 @@ const WEEKS = [
     write: "Write-up #1 draft",
     ms: "Kairo Phase 1 done: one agent, two read-only tools, audit log, pass rate recorded",
   },
-  {
+    {
     n: 5,
-    title: "Threat modelling & approvals",
-    phase: 1,
-    t: [
-      ["w5t1", "Threat modelling with STRIDE; trust boundaries; data-flow diagrams", "sec"],
-      ["w5t2", "Prompt injection, direct and indirect; why policy lives outside the model", "sec"],
-      ["w5t3", "Excessive agency and least privilege; scoped capability tokens", "sec"],
-      ["w5t4", "AWS networking: VPC, subnets, security groups, load balancers", "cloud"],
-    ],
-    p: [
-      ["w5p1", "Kairo threat model: data-flow diagram + STRIDE table + mitigations", "sec"],
-      ["w5p2", "Risk classification rules in YAML: read, write, irreversible", "sec"],
-      ["w5p3", "Approval flow in Telegram: signed one-time token, expiry, audit entry", "sec"],
-      ["w5p4", "Publish write-up #1", "career"],
-    ],
-    dsa: "Linked lists",
-    write: "Polish and publish write-up #1",
-    ms: "Every write action waits for your approval; threat model published",
-  },
-  {
-    n: 6,
-    title: "AgentGuard I",
+    title: "AgentGuard I: baseline",
     phase: 1,
     light: true,
     t: [
-      ["w6t1", "Read Simon Willison's prompt injection series (key posts)", "sec"],
-      ["w6t2", "Claude Academy: Introduction to Model Context Protocol", "llm"],
-      ["w6t3", "Anthropic research: summarise 2 posts in 5 lines each", "career"],
+      ["w5t1", "Read Simon Willison's prompt injection series (key posts)", "sec"],
+      ["w5t2", "Claude Academy: Introduction to Model Context Protocol", "llm"],
+      ["w5t3", "Anthropic research: summarise 2 posts in 5 lines each", "career"],
     ],
     p: [
-      ["w6p1", "AgentGuard harness: attack cases as YAML (email, issue, web page)", "sec"],
-      ["w6p2", "10 injection cases with the expected safe behaviour", "evals"],
-      ["w6p3", "Run them against Kairo; record block rate v1", "evals"],
+      ["w5p1", "AgentGuard harness: attack cases as YAML (email, issue, web page)", "sec"],
+      ["w5p2", "10 injection cases with the expected safe behaviour", "evals"],
+      ["w5p3", "Run them against Kairo; record the baseline block rate", "evals"],
     ],
-    dsa: "Review weeks 1–5 (redo 5 problems)",
-    write: "AgentGuard notes",
-    ms: "AgentGuard v1: 10 cases, first block rate recorded",
+    dsa: "Linked lists",
+    write: "AgentGuard notes: what got through and why",
+    ms: "AgentGuard v1: 10 cases, baseline block rate recorded",
   },
   {
-    n: 7,
+    n: 6,
     title: "MCP, secrets & sandboxing",
     phase: 1,
     light: true,
     t: [
-      ["w7t1", "MCP: servers, tools, resources, transports", "llm"],
-      ["w7t2", "Claude Academy: MCP Advanced Topics", "llm"],
-      ["w7t3", "Secrets management and sandboxing: Docker secrets, read-only, no network", "sec"],
+      ["w6t1", "MCP: servers, tools, resources, transports", "llm"],
+      ["w6t2", "Claude Academy: MCP Advanced Topics", "llm"],
+      ["w6t3", "Secrets management and sandboxing: Docker secrets, read-only, no network", "sec"],
     ],
     p: [
-      ["w7p1", "Build your own MCP server exposing n8n workflows as typed tools", "llm"],
-      ["w7p2", "Move secrets out of code into Docker secrets; rotate the GitHub token", "sec"],
-      ["w7p3", "Run tool code in a locked-down container (no network, read-only root)", "sec"],
+      ["w6p1", "Build your own MCP server exposing n8n workflows as typed tools", "llm"],
+      ["w6p2", "Move secrets out of code into Docker secrets; rotate the GitHub token", "sec"],
+      ["w6p3", "Run tool code in a locked-down container (no network, read-only root)", "sec"],
     ],
-    dsa: "Trees: traversals",
+    dsa: "Review weeks 1–5 (redo 5 problems)",
     write: "README for the MCP server",
     ms: "Your MCP server on GitHub; no secret in code or logs",
+  },
+  {
+    n: 7,
+    title: "Threat modelling & approvals",
+    phase: 1,
+    t: [
+      ["w7t1", "Threat modelling with STRIDE; trust boundaries; data-flow diagrams", "sec"],
+      ["w7t2", "Prompt injection, direct and indirect; why policy lives outside the model", "sec"],
+      ["w7t3", "Excessive agency and least privilege; scoped capability tokens", "sec"],
+      ["w7t4", "AWS networking: VPC, subnets, security groups, load balancers", "cloud"],
+    ],
+    p: [
+      ["w7p1", "Kairo threat model: data-flow diagram + STRIDE table + mitigations", "sec"],
+      ["w7p2", "Risk classification rules in YAML: read, write, irreversible", "sec"],
+      ["w7p3", "Approval flow in Telegram: signed one-time token, expiry, audit entry", "sec"],
+      ["w7p4", "Publish write-up #1", "career"],
+    ],
+    dsa: "Trees: traversals",
+    write: "Polish and publish write-up #1",
+    ms: "Every write action waits for your approval; threat model published",
   },
   {
     n: 8,
@@ -171,7 +171,7 @@ const WEEKS = [
       ["w8t4", "AWS resilience: multi-AZ and disaster-recovery strategies", "cloud"],
     ],
     p: [
-      ["w8p1", "AgentGuard to 20+ cases; fix what gets through; block rate v2", "sec"],
+      ["w8p1", "AgentGuard to 20+ cases against the new controls; block rate v2 vs baseline", "sec"],
       ["w8p2", "Evals run on every push in GitHub Actions", "evals"],
       ["w8p3", "README with real numbers: pass rate, block rate, cost per task", "career"],
       ["w8p4", "Demo video v1 (3 min) + write-up #2: injection test results", "career"],
@@ -328,7 +328,7 @@ const SKILLS = [
       },
       {
         n: "Model Context Protocol",
-        w: [6, 7],
+        w: [5, 6],
         s: ["Tools, resources, prompts", "Build a server", "Transports and auth"],
         r: [["MCP docs", "https://modelcontextprotocol.io"]],
       },
@@ -357,7 +357,7 @@ const SKILLS = [
       },
       {
         n: "Metrics",
-        w: [4, 6, 8],
+        w: [4, 5, 8],
         s: ["Pass rate", "Cost and latency per task", "Injection block rate"],
         r: [],
       },
@@ -369,7 +369,7 @@ const SKILLS = [
     h: [
       {
         n: "LLM threats",
-        w: [1, 5, 6],
+        w: [1, 5, 7],
         s: [
           "OWASP Top 10 for LLM apps",
           "Direct and indirect prompt injection",
@@ -383,7 +383,7 @@ const SKILLS = [
       },
       {
         n: "Threat modelling",
-        w: [5],
+        w: [7],
         s: ["STRIDE", "Trust boundaries", "Data-flow diagrams", "Abuse cases"],
         r: [
           [
@@ -394,7 +394,7 @@ const SKILLS = [
       },
       {
         n: "Controls",
-        w: [3, 5, 7],
+        w: [3, 5, 6],
         s: [
           "Least privilege and scoped tokens",
           "Human approval",
@@ -423,7 +423,7 @@ const SKILLS = [
       },
       {
         n: "Compute & network",
-        w: [4, 5],
+        w: [4, 7],
         s: ["EC2 and Lambda", "S3", "VPC and security groups", "Load balancers"],
         r: [],
       },

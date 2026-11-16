@@ -1,7 +1,7 @@
 "use strict";
 /* State: everything you tick, rate or log. Saved in this browser (localStorage). */
 const DEFAULT_SETTINGS = {
-  start: "2026-11-16",
+  start: "2026-11-23",
   morning: "06:30",
   evening: "18:30",
   weekend: "09:00",
